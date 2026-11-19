@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Exercise Timer</h1>
+
+  <!-- Config panel (shown at idle) -->
+  <div id="config-panel">
+    <div class="field">
+      <label for="input-exercise">Exercise duration (seconds)</label>
+      <input id="input-exercise" type="number" min="1" value="5" />
+    </div>
+    <div class="field">
+      <label for="input-rest">Rest duration (seconds)</label>
+      <input id="input-rest" type="number" min="0" value="1" />
+    </div>
+    <div class="field">
+      <label for="input-increment">Rest increment per rep (seconds)</label>
+      <input id="input-increment" type="number" min="0" step="0.1" value="0.5" />
+      <span class="hint">Added to rest time after each rep. Set 0 to keep rest constant.</span>
+    </div>
+    <div class="field">
+      <label for="input-reps">Number of reps</label>
+      <input id="input-reps" type="number" min="1" value="11" />
+    </div>
+  </div>
+
+  <!-- Timer panel (shown while running) -->
+  <div id="timer-panel" class="hidden">
+    <div id="phase-label">EXERCISE</div>
+    <div id="countdown">30</div>
+    <div id="rep-label">Rep 1</div>
+    <div id="next-rest-label"></div>
+  </div>
+
+  <!-- Controls always present -->
+  <div class="btn-row">
+    <button id="btn-start-pause">Start</button>
+    <button id="btn-reset" class="hidden">Reset</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
